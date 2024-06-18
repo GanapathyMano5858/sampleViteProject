@@ -36,6 +36,8 @@ const useValidation: useValidationType = (data, handleSubmit, onError) => {
     try {
       await schema.validate(data, { abortEarly: false });
       setErrors({});
+      console.log(data);
+
       submitting && handleSubmit();
     } catch (err: any) {
       setSubmitting(false);

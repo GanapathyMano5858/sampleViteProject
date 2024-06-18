@@ -11,20 +11,25 @@ export default Yup.object().shape({
     .required("This field is Required"),
   email: Yup.string()
     .matches(
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
       "Invalid mail address"
     )
     .required("This field is Required"),
   mobilenumber: Yup.string()
-    .min(3, "Minimum 3 characters required")
-    .matches(/^[+0-9\s]*$/, "Invalid character in Mobile number")
+    .matches(
+      /^\d+$/,
+      "Invalid mobile number"
+    )
     .required("This field is Required"),
   alertmobilernumber: Yup.string()
-    .min(3, "Minimum 3 characters required")
-    .matches(/^[+0-9\s]*$/, "Invalid character in Mobile number")
+    .matches(
+      /^(?:\+?(\d{1,3}))?[-.\s]?(\d{1,4})?[-.\s]?(\d{1,4})[-.\s]?(\d{1,9})$/,
+      "Invalid mobile number"
+    )
     .notOneOf(
       [Yup.ref("mobilenumber"), null],
       "Mobile numbers must be different"
     )
     .required("This field is Required"),
+
 });

@@ -1,7 +1,8 @@
 import AddOns from "../Addons";
-import CompanyDetails from "../CompanyDetails/CompanyDetails";
+// import CompanyDetails from "../CompanyDetails/CompanyDetails";
 import Info from "../Info";
 import { Step } from "../MultiStepForm/types";
+import CompanyDetails from "../Plan";
 import Success from "../Sucess";
 import Summary from "../Summary";
 
