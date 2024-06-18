@@ -1,0 +1,155 @@
+.multiStepForm {
+  background-color: var(--neutral-100);
+  width: min(100%, 1000px);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  box-shadow: 10px 10px 80px -10px rgba(0, 0, 0, 0.103);
+  overflow: hidden;
+}
+.multiStepForm .steps {
+  padding: 3rem 2rem;
+  border-radius: inherit;
+  background: url("../../Assets/bg-sidebar-desktop.svg") no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: auto;
+}
+.multiStepForm .content {
+  padding: 0rem 0 0 2rem;
+  max-width: 600px;
+  width: 100%;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 2rem;
+}
+.multiStepForm .content .step__component {
+  flex: 1;
+  overflow: auto;
+}
+.multiStepForm .content .btns {
+  display: flex;
+  margin-top: auto;
+  justify-content: space-between;
+  width: 100%;
+}
+.multiStepForm .content .btns .goBack:hover {
+  color: var(--primary-800);
+}
+.multiStepForm .content .btns button:not(.goBack) {
+  color: white;
+  font-weight: 400;
+}
+.multiStepForm .content .btns button:not(.goBack).next {
+  background-color: var(--primary-800);
+}
+.multiStepForm .content .btns button:not(.goBack).submit {
+  background-color: var(--primary-400);
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  cursor: pointer;
+  height: max-content;
+}
+.step .index {
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--primary-200);
+  border: 1px solid;
+  transition: all 0.2s ease-in-out;
+}
+.step.active .index {
+  border: 2px solid;
+  background-color: var(--primary-200);
+  color: var(--primary-800);
+  border-color: var(--primary-200);
+}
+.step .title p {
+  color: var(--neutral-300);
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+.step .title h3 {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.form > p,
+.summary > p {
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1000px) {
+  .multiStepForm {
+    grid-template-columns: 270px 1fr;
+    padding: 0.5rem;
+  }
+  .multiStepForm .steps {
+    padding: 2rem 1rem;
+  }
+  .multiStepForm .content {
+    padding: 4rem 1rem 2rem;
+  }
+}
+@media (max-width: 800px) {
+  .multiStepForm {
+    grid-template-columns: 1fr;
+    height: 100%;
+    padding: 0;
+    border-radius: 0;
+    position: relative;
+    isolation: isolate;
+    background-color: var(--primary-100);
+  }
+  .multiStepForm .steps {
+    padding: 2rem 1rem;
+    flex-direction: row;
+    background-image: url("../../Assets/bg-sidebar-mobile.svg");
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 16rem;
+    z-index: -1;
+  }
+  .multiStepForm .steps .step:first-child {
+    margin-left: auto;
+  }
+  .multiStepForm .steps .step:last-child {
+    margin-right: auto;
+  }
+  .multiStepForm .steps .step *:not(.index) {
+    display: none;
+  }
+  .multiStepForm .content {
+    margin-top: 8rem;
+    padding: 0;
+  }
+  .multiStepForm .content .step__component {
+    padding: 2rem;
+    margin-inline: 1rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    flex: initial;
+    box-shadow: 10px 10px 80px -10px rgba(0, 0, 0, 0.103);
+  }
+  .multiStepForm .content .btns {
+    background-color: white;
+    padding: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .multiStepForm .content .step__component {
+    margin-inline: 0.5rem;
+    padding: 2rem 1rem;
+  }
+}/*# sourceMappingURL=styles.css.map */

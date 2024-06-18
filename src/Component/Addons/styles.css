@@ -1,0 +1,39 @@
+.addons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.addon {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--neutral-300);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.addon:hover, .addon:focus {
+  border-color: var(--primary-400);
+}
+.addon.active {
+  background-color: var(--neutral-200);
+  border-color: var(--primary-400);
+}
+.addon .price {
+  margin-left: auto;
+  font-weight: 500;
+  color: var(--primary-400);
+}
+.addon label {
+  cursor: pointer;
+}
+.addon input[type=checkbox] {
+  accent-color: var(--primary-400);
+  width: 1.2rem;
+  aspect-ratio: 1;
+  cursor: pointer;
+  pointer-events: none;
+  flex-shrink: 0;
+}/*# sourceMappingURL=styles.css.map */

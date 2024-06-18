@@ -1,0 +1,134 @@
+/* Outfit Font */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+}
+.App {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-toggler {
+  border: none !important;
+}
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+.textPrimary {
+  color: var(--PrimaryColor);
+}
+.bg-gray {
+  background-color: var(--LightGray);
+}
+.primaryBtn {
+  border: none;
+  padding: 7px 20px;
+  background-color: var(--PrimaryColor);
+  color: var(--whiteColor);
+  font-size: 16px;
+  font-weight: 400;
+}
+.primaryBtn:hover {
+  background-color: var(--PrimaryColor);
+}
+
+/* Default styles  */
+/* Add your default styles here  */
+
+/* Media query for screens smaller than 576px (e.g., smartphones)  */
+@media (max-width: 575px) {
+  .offcanvas {
+    max-width: 70% !important;
+  }
+  .facts .facts-left img {
+    opacity: 0.5;
+  }
+  .factsTitle,
+  .factsPara {
+    z-index: 5;
+  }
+  .facts {
+    padding: 40px 0;
+  }
+  .Ads {
+    padding: 20px !important;
+  }
+  .Ads-title {
+    font-size: 34px !important;
+  }
+  .footer-top {
+    padding: 30px 0px !important;
+  }
+  .keyFeaturesMainDiv {
+    padding: 10px 0 !important;
+  }
+  .we-offer-area .item {
+    padding: 15px !important;
+  }
+}
+
+/* Media query for screens between 576px and 767px (e.g., tablets)  */
+@media (min-width: 576px) and (max-width: 767px) {
+  .offcanvas {
+    max-width: 70% !important;
+  }
+  .facts .facts-left img {
+    opacity: 0.5;
+  }
+  .factsTitle,
+  .factsPara {
+    z-index: 5;
+  }
+  .facts {
+    padding: 40px 0;
+  }
+  .keyFeaturesMainDiv {
+    padding: 30px 0;
+  }
+  .Ads {
+    padding: 20px !important;
+  }
+  .Ads-title {
+    font-size: 34px !important;
+  }
+  .footer-top {
+    padding: 30px 0px !important;
+  }
+  .keyFeaturesMainDiv {
+    padding: 10px 0 !important;
+  }
+  .we-offer-area .item {
+    padding: 15px !important;
+  }
+}
+
+/* Media query for screens between 768px and 991px (e.g., small laptops)  */
+/* Adjust styles for small laptops here  */
+@media (min-width: 768px) and (max-width: 991px) {
+  .facts .facts-left img {
+    opacity: 0.5;
+  }
+  .factsTitle,
+  .factsPara {
+    z-index: 5;
+  }
+}
+
+/* Media query for screens between 992px and 1199px (e.g., medium laptops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Adjust styles for medium laptops here  */
+}
+
+/* Media query for screens larger than 1200px (e.g., large laptops and desktops)  */
+@media (min-width: 1200px) {
+  /* Adjust styles for large laptops and desktops here */
+}
