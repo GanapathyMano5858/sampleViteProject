@@ -90,6 +90,9 @@ button:hover {
   outline: none;
   font-weight: 500;
 }
+.input__group input::-moz-placeholder {
+  color: var(--neutral-400);
+}
 .input__group input::placeholder {
   color: var(--neutral-400);
 }

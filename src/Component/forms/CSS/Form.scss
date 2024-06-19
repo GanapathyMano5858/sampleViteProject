@@ -1,0 +1,28 @@
+// SelectField.scss
+.select-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-control {
+    padding-left: 2.5rem; // Adjust to make room for the arrow
+  }
+  
+  .dropdown-arrow {
+    position: absolute;
+    right: 0.75rem;
+    font-size: 22px;
+    pointer-events: none; // Ensure it doesn't interfere with clicks
+    transition: transform 0.3s ease;
+  }
+  
+  .form-control.open ~ .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+  

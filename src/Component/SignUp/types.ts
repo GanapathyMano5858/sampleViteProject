@@ -15,34 +15,43 @@ export interface FormValueType {
 }
 
 const form1Schema = z.object({
-  name: z
+  firstname: z
     .string()
     .min(3, "Minimum 3 characters")
     .max(20, "Maximum 20 characters"),
-  address: z
+  lastname: z
     .string()
-    .min(10, "Minimun 10 characters")
-    .max(100, "Maximum 100 characters"),
-  number: z
+    .min(3, "Minimum 3 characters")
+    .max(20, "Maximum 20 characters"),
+  // address: z
+  //   .string()
+  //   .min(10, "Minimum 10 characters")
+  //   .max(100, "Maximum 100 characters"),
+  mobilenumber: z
     .string()
     .min(10, "Should contain minimum 10 digits")
     .max(18, "Should not exceed 18 digits"),
+  alternatemobilenumber: z
+    .string()
+    .min(10, "Should contain minimum 10 digits")
+    .max(18, "Should not exceed 18 digits"),
+  emailid: z
+    .string()
+    .email("Invalid email address")
+    .min(10, "Minimum 10 characters")
+    .max(100, "Maximum 100 characters"),
+}).refine(data => data.mobilenumber !== data.alternatemobilenumber, {
+  message: "Mobile number and alternate mobile number should not be the same",
+  path: ["alternatemobilenumber"], // error path
 });
 
 const form2Schema = z.object({
-  email: z
+  companyname: z
     .string()
-    .email()
-    .refine((val) => val.endsWith("@gmail.com"), "Should end with @gmail.com"),
-  user_name: z
-    .string()
-    .min(5, "Minimun 5 characters")
-    .max(14, "Maximum 14 characters"),
-  password: z
-    .string()
-    .min(8, "Password must be at least 8 characters long")
-    .max(20, "Password length should not exceed 20 characters")
-    .regex(/\d/, "Password must contain at least 1 number"),
+    .min(2, "Minimun 2 characters")
+    .max(14, "Maximum 100 characters"),
+    
+
 });
 
 const form3Schema = z.object({

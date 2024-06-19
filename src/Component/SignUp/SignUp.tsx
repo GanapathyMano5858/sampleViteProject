@@ -52,10 +52,12 @@ function SignUp() {
             ) : (
               <Formik
                 initialValues={{
-                  name: "",
-                  address: "",
-                  email: "",
-                  number: "",
+                  firstname: "",
+                  lastname: "",
+                  emailid: "",
+                  mobilenumber: "",
+                  alternatemobilenumber: "",
+                  companyname: "",
                   user_name: "",
                   password: "",
                   plan: "Arcade",

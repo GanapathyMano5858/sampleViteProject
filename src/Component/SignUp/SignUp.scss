@@ -7,3 +7,9 @@
   width: 650px;
   padding: 5px 5px 5px 30px;
 }
+
+input,
+select,
+textarea {
+  box-shadow: none !important;
+}

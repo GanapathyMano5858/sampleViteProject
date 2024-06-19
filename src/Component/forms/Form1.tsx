@@ -19,9 +19,9 @@ const Form1 = () => {
             name="firstname"
             className="form-control border border-secondary rounded-3 p-3 w-100"
           />
-               <span className="text-danger fs-small">
-        <ErrorMessage name="firstname" />
-      </span>
+          <span className="text-danger fs-small">
+            <ErrorMessage name="firstname" />
+          </span>
         </div>
         <div className="col-12 col-lg-6 ps-2 d-flex flex-column row-gap-2">
           <label className="text-primary font-weight-semibold" htmlFor="lastname">
@@ -34,52 +34,59 @@ const Form1 = () => {
             name="lastname"
             className="form-control border border-secondary rounded-3 p-3 w-100"
           />
-               <span className="text-danger fs-small">
-        <ErrorMessage name="lastname" />
-      </span>
+          <span className="text-danger fs-small">
+            <ErrorMessage name="lastname" />
+          </span>
         </div>
       </div>
- 
-      <label className="text-primary font-weight-semibold" htmlFor="address">
-        Address
+
+      <label className="text-primary font-weight-semibold" htmlFor="emailid">
+        Email ID
       </label>
       <Field
-        as="textarea"
+        // as="textarea"
         type="text"
-        placeholder="e.g. XYZ Street, Avenue Center"
-        id="address"
-        name="address"
+        placeholder="e.g. royjoseph@gmail.com"
+        id="emailid"
+        name="emailid"
         className="form-control border border-secondary rounded-3 p-3 w-100 min-height-[50px]"
       />
       <span className="text-danger fs-small">
-        <ErrorMessage name="address" />
+        <ErrorMessage name="emailid" />
       </span>
 
       <div className="d-flex w-100 justify-content-between">
         <div className="col-12 col-lg-6 pe-2 d-flex flex-column row-gap-2">
-        <label className="text-primary font-weight-semibold" htmlFor="phone">
-        Phone Number
-      </label>
-      <Field
-        type="text"
-        placeholder="e.g. 9447077177"
-        id="phone"
-        name="number"
-        className="form-control border border-secondary rounded-3 p-3 w-100"
-      />
-        </div>
-        <div className="col-12 col-lg-6 ps-2 d-flex flex-column row-gap-2">
-          <label className="text-primary font-weight-semibold" htmlFor="name">
-            Last Name
+          <label className="text-primary font-weight-semibold" htmlFor="mobilenumber">
+            Mobile Number
           </label>
           <Field
             type="text"
-            placeholder="e.g. Roy Joseph"
-            id="name"
-            name="name"
+            placeholder="e.g. 9447077177"
+            id="mobilenumber"
+            name="mobilenumber"
             className="form-control border border-secondary rounded-3 p-3 w-100"
           />
+          <span className="text-danger fs-small">
+            <ErrorMessage name="mobilenumber" />
+          </span>
         </div>
+        <div className="col-12 col-lg-6 ps-2 d-flex flex-column row-gap-2">
+          <label className="text-primary font-weight-semibold" htmlFor="alternatemobilenumber">
+            Alternate Mobile Number
+          </label>
+          <Field
+            type="text"
+            placeholder="e.g. 9447077177"
+            id="alternatemobilenumber"
+            name="alternatemobilenumber"
+            className="form-control border border-secondary rounded-3 p-3 w-100"
+          />
+          <span className="text-danger fs-small">
+            <ErrorMessage name="alternatemobilenumber" />
+          </span>
+        </div>
+
       </div>
 
 

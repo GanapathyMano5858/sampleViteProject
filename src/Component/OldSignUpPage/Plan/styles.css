@@ -27,7 +27,8 @@
 .plans .plan label img {
   width: 40px;
   height: 40px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-bottom: 4rem;
 }
 .plans .plan label h4 {
