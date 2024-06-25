@@ -26,3 +26,8 @@
     transform: rotate(180deg);
   }
   
+  .formControlTextArea {
+    min-height: calc(3 * 1.5em); // Adjust the multiplier based on line-height
+    max-height: calc(7 * 1.5em); // Adjust the multiplier based on line-height
+    overflow-y: auto; // Allow scrolling if content exceeds max-height
+  }

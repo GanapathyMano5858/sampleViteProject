@@ -23,4 +23,10 @@
 
 .form-control.open ~ .dropdown-arrow {
   transform: rotate(180deg);
+}
+
+.formControlTextArea {
+  min-height: 4.5em;
+  max-height: 10.5em;
+  overflow-y: auto;
 }/*# sourceMappingURL=Form.css.map */

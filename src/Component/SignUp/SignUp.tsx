@@ -42,10 +42,10 @@ function SignUp() {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center p-0 py-lg-5">
+    <div className="container d-flex justify-content-center align-items-center p-0 py-lg-3">
       <div className="bg-light d-flex justify-content-between flex-column flex-md-row max-lg-flex-column signUpForm p-4 rounded-lg">
         <StepNav currentIndex={currentIndex} />
-        <div className="flex-2 z-20 singUpFormLeft h-100 p-8 bg-transparent max-lg-max-w-800 max-lg-self-center">
+        <div className="flex-2 z-20 singUpFormLeft h-100 p-8 bg-light max-lg-max-w-800 max-lg-self-center">
           <div className="max-lg-bg-white w-100 h-100 rounded-2xl">
             {success ? (
               <SuccessPage />
@@ -58,11 +58,13 @@ function SignUp() {
                   mobilenumber: "",
                   alternatemobilenumber: "",
                   companyname: "",
-                  user_name: "",
-                  password: "",
-                  plan: "Arcade",
-                  yearly: false,
-                  addOn: [],
+                  companytype: "",
+                  address: '',
+                  city: "",
+                  state: "",
+                  country: "",
+                  pincode: ""
+
                 }}
                 validationSchema={setValidationSchema()}
                 onSubmit={(values) => {
@@ -74,7 +76,7 @@ function SignUp() {
                 }}
               >
                 {({ values }) => (
-                  <Form className="d-flex flex-column h-100 w-100 font-mono pl-10 pt-10 pr-12 max-lg-p-4">
+                  <Form className="d-flex flex-column h-100 w-100 justify-content-between font-mono pl-10 pt-10 pr-12 max-lg-p-4">
                     {currentIndex === 0 ? (
                       <Form1 />
                     ) : currentIndex === 1 ? (

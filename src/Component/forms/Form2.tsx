@@ -5,52 +5,180 @@ import { IoIosArrowDown } from "react-icons/io";
 
 
 const Form2 = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isCompanyTypeOpen, setIsCompanyTypeOpen] = useState(false);
+  const [isCityOpen, setIsCityOpen] = useState(false);
+  const [isStateOpen, setIsStateOpen] = useState(false);
+  const [isContryOpen, setIsContryOpen] = useState(false);
+
+
 
   return (
-    <div className="overflow-auto d-flex flex-column gap-2 h-100 w-100 align-items-start font-mono text-left">
+    <div className="d-flex flex-column gap-2 h-100 w-100 align-items-start font-mono text-left">
       <h2 className="text-primary font-weight-bold fs-3 mb-0">
         Company Info
       </h2>
       <p className="text-secondary mb-2 fs-small">
         Please provide your Company Name, Company Type, and Address
       </p>
-      {/* <label className="text-primary font-weight-semibold" htmlFor="email">
-        Email Address
+      <div className='d-flex w-100 justify-content-between'>
+        <div className='col-12 col-lg-6 pe-2'>
+          <label className="text-primary font-weight-semibold" htmlFor="companyname">
+            Company Name
+          </label>
+          <Field
+            type="text"
+            placeholder=" e.g. XYZ Pvt Ltd"
+            // placeholder=" e.g. XYZ Street, Avenue Center"
+            id="companyname"
+            name="companyname"
+            className="form-control border border-secondary rounded-3 p-3 w-100"
+          />
+          <span className="text-danger fs-small">
+            <ErrorMessage name="companyname" />
+          </span></div>
+        <div className='col-12 col-lg-6 ps-2'>
+          <label className="text-primary font-weight-semibold" htmlFor="companytype">
+            Company Type
+          </label>
+          <div className="select-wrapper">
+            <Field
+              as="select"
+              id="companytype"
+              name="companytype"
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isCompanyTypeOpen ? 'open' : ''}`}
+              onClick={() => setIsCompanyTypeOpen(!isCompanyTypeOpen)}
+              onBlur={() => setIsCompanyTypeOpen(false)}
+            >
+              <option disabled selected label="Select company type" />
+              <option value="Public Limited Company (PLC)" label="Public Limited Company (PLC)" />
+              <option value="Private Limited Company (PVT)" label="Private Limited Company (PVT)" />
+              <option value="One Person Company (OPC)" label="One Person Company (OPC)" />
+            </Field>
+            <IoIosArrowDown className={`dropdown-arrow ${isCompanyTypeOpen ? 'rotate' : ''}`} />
+          </div>
+          <span className="text-danger fs-small">
+            <ErrorMessage name="companytype" />
+          </span>
+        </div>
+      </div>
+
+      <label className="text-Marine_blue font-semibold" htmlFor="address">
+        Address
       </label>
       <Field
-        type="email"
+        as="textarea"
+        type="text"
         placeholder=" e.g. XYZ Street, Avenue Center"
-        id="email"
-        name="email"
-        className="form-control border border-secondary rounded-3 p-3 w-100"
-      /> */}
-      {/* <span className="text-danger fs-small">
-        <ErrorMessage name="email" />
-      </span> */}
-      <label className="text-primary font-weight-semibold" htmlFor="companytype">
-        Company Type
-      </label>
-      <div className="select-wrapper w-75">
-        <Field
-          as="select"
-          id="companytype"
-          name="companytype"
-          className={`form-control border border-secondary rounded-3 p-3 w-100 ${isOpen ? 'open' : ''}`}
-          onClick={() => setIsOpen(!isOpen)}
-          onBlur={() => setIsOpen(false)}
-        >
-          <option disabled value="" label="Select company type" />
-          <option value="Public Limited Company (PLC)" label="Public Limited Company (PLC)" />
-          <option value="Private Limited Company (PVT)" label="Private Limited Company (PVT)" />
-          <option value="One Person Company (OPC)" label="One Person Company (OPC)" />
-        </Field>
-        <IoIosArrowDown className={`dropdown-arrow ${isOpen ? 'rotate' : ''}`} />
-      </div>
+        id="address"
+        name="address"
+        // row="3"
+        className="formControlTextArea form-control border border-secondary rounded-3 p-3 w-100"
+      />
       <span className="text-danger fs-small">
-        <ErrorMessage name="companytype" />
+        <ErrorMessage name="address" />
       </span>
+      <div className='d-flex w-100 justify-content-between'>
+        <div className='col-12 col-lg-6 pe-2'>
+          <label className="text-primary font-weight-semibold" htmlFor="city">
+            City
+          </label>
+          <div className="select-wrapper">
+            <Field
+              as="select"
+              id="city"
+              name="city"
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isCityOpen ? 'open' : ''}`}
+              onClick={() => setIsCityOpen(!isCityOpen)}
+              onBlur={() => setIsCityOpen(false)}
+            >
+              <option disabled selected label="Select City" />
+              <option value="Tamil Nadu" label="Tamil Nadu" />
+              <option value="Kerala" label="Kerala" />
+              <option value="Telangana" label="Telangana" />
+              <option value="Maharashtra" label="Maharashtra" />
+              <option value="Punjab" label="Punjab" />
+              <option value="Andhra Pradesh" label="Andhra Pradesh" />
+            </Field>
+            <IoIosArrowDown className={`dropdown-arrow ${isCityOpen ? 'rotate' : ''}`} />
+          </div>
+          <span className="text-danger fs-small">
+            <ErrorMessage name="state" />
+          </span>
+        </div>
+        <div className='col-12 col-lg-6 ps-2'>
+          <label className="text-primary font-weight-semibold" htmlFor="state">
+            State
+          </label>
+          <div className="select-wrapper">
+            <Field
+              as="select"
+              id="state"
+              name="state"
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isStateOpen ? 'open' : ''}`}
+              onClick={() => setIsStateOpen(!isStateOpen)}
+              onBlur={() => setIsStateOpen(false)}
+            >
+              <option disabled selected label="Select State" />
+              <option value="Tamil Nadu" label="Tamil Nadu" />
+              <option value="Kerala" label="Kerala" />
+              <option value="Telangana" label="Telangana" />
+              <option value="Maharashtra" label="Maharashtra" />
+              <option value="Punjab" label="Punjab" />
+              <option value="Andhra Pradesh" label="Andhra Pradesh" />
+            </Field>
+            <IoIosArrowDown className={`dropdown-arrow ${isStateOpen ? 'rotate' : ''}`} />
+          </div>
+          <span className="text-danger fs-small">
+            <ErrorMessage name="state" />
+          </span>
+        </div>
+      </div>
+      <div className='d-flex w-100 justify-content-between'>
+        <div className='col-12 col-lg-6 pe-2'>
+          <label className="text-primary font-weight-semibold" htmlFor="country">
+            Country
+          </label>
+          <div className="select-wrapper">
+            <Field
+              as="select"
+              id="country"
+              name="country"
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isContryOpen ? 'open' : ''}`}
+              onClick={() => setIsContryOpen(!isContryOpen)}
+              onBlur={() => setIsContryOpen(false)}
+            >
+              <option disabled selected label="Select Country" />
+              <option value="Tamil Nadu" label="Tamil Nadu" />
+              <option value="Kerala" label="Kerala" />
+              <option value="Telangana" label="Telangana" />
+              <option value="Maharashtra" label="Maharashtra" />
+              <option value="Punjab" label="Punjab" />
+              <option value="Andhra Pradesh" label="Andhra Pradesh" />
+            </Field>
+            <IoIosArrowDown className={`dropdown-arrow ${isContryOpen ? 'rotate' : ''}`} />
+          </div>
+          <span className="text-danger fs-small">
+            <ErrorMessage name="country" />
+          </span>
+        </div>
+        <div className='col-12 col-lg-6 ps-2'>
+          <label className="text-primary font-weight-semibold" htmlFor="pincode">
+            Pincode
+          </label>
+          <Field
+            type="text"
+            placeholder=" e.g. 123456"
+            id="pincode"
+            name="pincode"
+            className="form-control border border-secondary rounded-3 p-3 w-100"
+          />
+          <span className="text-danger fs-small">
+            <ErrorMessage name="pincode" />
+          </span>
+        </div>
+      </div>
     </div>
+
   );
 };
 
