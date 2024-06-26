@@ -9,7 +9,10 @@ const Form1 = () => {
       </p>
       <div className="d-flex w-100 justify-content-between">
         <div className="col-12 col-lg-6 pe-lg-2 d-flex flex-column">
-          <label className="text-primary font-weight-semibold pb-2" htmlFor="firstname">
+          <label
+            className="text-primary font-weight-semibold pb-2"
+            htmlFor="firstname"
+          >
             First Name
           </label>
           <Field
@@ -19,12 +22,15 @@ const Form1 = () => {
             name="firstname"
             className="form-control border border-secondary rounded-3 p-3 w-100"
           />
-          <span className="text-danger fs-small">
+          <div className="text-danger fs-small pt-2">
             <ErrorMessage name="firstname" />
-          </span>
+          </div>
         </div>
         <div className="col-12 col-lg-6 ps-lg-2 d-flex flex-column">
-          <label className="text-primary font-weight-semibold pb-2" htmlFor="lastname">
+          <label
+            className="text-primary font-weight-semibold pb-2"
+            htmlFor="lastname"
+          >
             Last Name
           </label>
           <Field
@@ -34,14 +40,17 @@ const Form1 = () => {
             name="lastname"
             className="form-control border border-secondary rounded-3 p-3 w-100"
           />
-          <span className="text-danger fs-small">
+          <div className="text-danger fs-small pt-2">
             <ErrorMessage name="lastname" />
-          </span>
+          </div>
         </div>
       </div>
 
       <div className="col-12 ">
-        <label className="text-primary font-weight-semibold pb-2" htmlFor="emailid">
+        <label
+          className="text-primary font-weight-semibold pb-2"
+          htmlFor="emailid"
+        >
           Email ID
         </label>
         <Field
@@ -52,14 +61,17 @@ const Form1 = () => {
           name="emailid"
           className="form-control border border-secondary rounded-3 p-3 w-100 min-height-[50px]"
         />
-        <span className="text-danger fs-small">
+        <div className="text-danger fs-small pt-2">
           <ErrorMessage name="emailid" />
-        </span>
+        </div>
       </div>
 
       <div className="d-flex w-100 justify-content-between">
         <div className="col-12 col-lg-6 pe-lg-2 d-flex flex-column">
-          <label className="text-primary font-weight-semibold pb-2" htmlFor="mobilenumber">
+          <label
+            className="text-primary font-weight-semibold pb-2"
+            htmlFor="mobilenumber"
+          >
             Mobile Number
           </label>
           <Field
@@ -69,12 +81,15 @@ const Form1 = () => {
             name="mobilenumber"
             className="form-control border border-secondary rounded-3 p-3 w-100"
           />
-          <span className="text-danger fs-small">
+          <div className="text-danger fs-small pt-2">
             <ErrorMessage name="mobilenumber" />
-          </span>
+          </div>
         </div>
         <div className="col-12 col-lg-6 ps-lg-2 d-flex flex-column">
-          <label className="text-primary font-weight-semibold pb-2" htmlFor="alternatemobilenumber">
+          <label
+            className="text-primary font-weight-semibold pb-2"
+            htmlFor="alternatemobilenumber"
+          >
             Alternate Mobile Number
           </label>
           <Field
@@ -84,17 +99,11 @@ const Form1 = () => {
             name="alternatemobilenumber"
             className="form-control border border-secondary rounded-3 p-3 w-100"
           />
-          <span className="text-danger fs-small">
+          <div className="text-danger fs-small pt-2">
             <ErrorMessage name="alternatemobilenumber" />
-          </span>
+          </div>
         </div>
-
       </div>
-
-
-      <span className="text-danger fs-small">
-        <ErrorMessage name="number" />
-      </span>
     </div>
   );
 };

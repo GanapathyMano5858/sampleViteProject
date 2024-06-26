@@ -1,8 +1,7 @@
-import { ErrorMessage, Field } from 'formik';
-import { useState } from 'react';
-import "./CSS/Form.css"
+import { ErrorMessage, Field } from "formik";
+import { useState } from "react";
+import "./CSS/Form.css";
 import { IoIosArrowDown } from "react-icons/io";
-
 
 const Form2 = () => {
   const [isCompanyTypeOpen, setIsCompanyTypeOpen] = useState(false);
@@ -10,34 +9,36 @@ const Form2 = () => {
   const [isStateOpen, setIsStateOpen] = useState(false);
   const [isContryOpen, setIsContryOpen] = useState(false);
 
-
-
   return (
     <div className="d-flex flex-column gap-2 h-100 w-100 align-items-start font-mono text-left">
-      <h2 className="text-primary font-weight-bold fs-3 mb-0">
-        Company Info
-      </h2>
+      <h2 className="text-primary font-weight-bold fs-3 mb-0">Company Info</h2>
       <p className="text-secondary mb-2 fs-small">
         Please provide your Company Name, Company Type, and Address
       </p>
-      <div className='d-flex w-100 justify-content-between'>
-        <div className='col-12 col-lg-6 pe-2'>
-          <label className="text-primary font-weight-semibold" htmlFor="companyname">
+      <div className="d-flex w-100 justify-content-between">
+        <div className="col-12 col-lg-6 pe-2">
+          <label
+            className="text-primary font-weight-semibold"
+            htmlFor="companyname"
+          >
             Company Name
           </label>
           <Field
             type="text"
             placeholder=" e.g. XYZ Pvt Ltd"
-            // placeholder=" e.g. XYZ Street, Avenue Center"
             id="companyname"
             name="companyname"
             className="form-control border border-secondary rounded-3 p-3 w-100"
           />
-          <span className="text-danger fs-small">
+          <div className="text-danger fs-small pt-2">
             <ErrorMessage name="companyname" />
-          </span></div>
-        <div className='col-12 col-lg-6 ps-2'>
-          <label className="text-primary font-weight-semibold" htmlFor="companytype">
+          </div>
+        </div>
+        <div className="col-12 col-lg-6 ps-2">
+          <label
+            className="text-primary font-weight-semibold"
+            htmlFor="companytype"
+          >
             Company Type
           </label>
           <div className="select-wrapper">
@@ -45,20 +46,33 @@ const Form2 = () => {
               as="select"
               id="companytype"
               name="companytype"
-              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isCompanyTypeOpen ? 'open' : ''}`}
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${
+                isCompanyTypeOpen ? "open" : ""
+              }`}
               onClick={() => setIsCompanyTypeOpen(!isCompanyTypeOpen)}
               onBlur={() => setIsCompanyTypeOpen(false)}
             >
               <option disabled selected label="Select company type" />
-              <option value="Public Limited Company (PLC)" label="Public Limited Company (PLC)" />
-              <option value="Private Limited Company (PVT)" label="Private Limited Company (PVT)" />
-              <option value="One Person Company (OPC)" label="One Person Company (OPC)" />
+              <option
+                value="Public Limited Company (PLC)"
+                label="Public Limited Company (PLC)"
+              />
+              <option
+                value="Private Limited Company (PVT)"
+                label="Private Limited Company (PVT)"
+              />
+              <option
+                value="One Person Company (OPC)"
+                label="One Person Company (OPC)"
+              />
             </Field>
-            <IoIosArrowDown className={`dropdown-arrow ${isCompanyTypeOpen ? 'rotate' : ''}`} />
+            <IoIosArrowDown
+              className={`dropdown-arrow ${isCompanyTypeOpen ? "rotate" : ""}`}
+            />
           </div>
-          <span className="text-danger fs-small">
+          <div className="text-danger fs-small">
             <ErrorMessage name="companytype" />
-          </span>
+          </div>
         </div>
       </div>
 
@@ -74,11 +88,11 @@ const Form2 = () => {
         // row="3"
         className="formControlTextArea form-control border border-secondary rounded-3 p-3 w-100"
       />
-      <span className="text-danger fs-small">
+      <div className="text-danger fs-small">
         <ErrorMessage name="address" />
-      </span>
-      <div className='d-flex w-100 justify-content-between'>
-        <div className='col-12 col-lg-6 pe-2'>
+      </div>
+      <div className="d-flex w-100 justify-content-between">
+        <div className="col-12 col-lg-6 pe-2">
           <label className="text-primary font-weight-semibold" htmlFor="city">
             City
           </label>
@@ -87,7 +101,9 @@ const Form2 = () => {
               as="select"
               id="city"
               name="city"
-              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isCityOpen ? 'open' : ''}`}
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${
+                isCityOpen ? "open" : ""
+              }`}
               onClick={() => setIsCityOpen(!isCityOpen)}
               onBlur={() => setIsCityOpen(false)}
             >
@@ -99,13 +115,15 @@ const Form2 = () => {
               <option value="Punjab" label="Punjab" />
               <option value="Andhra Pradesh" label="Andhra Pradesh" />
             </Field>
-            <IoIosArrowDown className={`dropdown-arrow ${isCityOpen ? 'rotate' : ''}`} />
+            <IoIosArrowDown
+              className={`dropdown-arrow ${isCityOpen ? "rotate" : ""}`}
+            />
           </div>
-          <span className="text-danger fs-small">
+          <div className="text-danger fs-small">
             <ErrorMessage name="state" />
-          </span>
+          </div>
         </div>
-        <div className='col-12 col-lg-6 ps-2'>
+        <div className="col-12 col-lg-6 ps-2">
           <label className="text-primary font-weight-semibold" htmlFor="state">
             State
           </label>
@@ -114,7 +132,9 @@ const Form2 = () => {
               as="select"
               id="state"
               name="state"
-              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isStateOpen ? 'open' : ''}`}
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${
+                isStateOpen ? "open" : ""
+              }`}
               onClick={() => setIsStateOpen(!isStateOpen)}
               onBlur={() => setIsStateOpen(false)}
             >
@@ -126,16 +146,21 @@ const Form2 = () => {
               <option value="Punjab" label="Punjab" />
               <option value="Andhra Pradesh" label="Andhra Pradesh" />
             </Field>
-            <IoIosArrowDown className={`dropdown-arrow ${isStateOpen ? 'rotate' : ''}`} />
+            <IoIosArrowDown
+              className={`dropdown-arrow ${isStateOpen ? "rotate" : ""}`}
+            />
           </div>
-          <span className="text-danger fs-small">
+          <div className="text-danger fs-small">
             <ErrorMessage name="state" />
-          </span>
+          </div>
         </div>
       </div>
-      <div className='d-flex w-100 justify-content-between'>
-        <div className='col-12 col-lg-6 pe-2'>
-          <label className="text-primary font-weight-semibold" htmlFor="country">
+      <div className="d-flex w-100 justify-content-between">
+        <div className="col-12 col-lg-6 pe-2">
+          <label
+            className="text-primary font-weight-semibold"
+            htmlFor="country"
+          >
             Country
           </label>
           <div className="select-wrapper">
@@ -143,7 +168,9 @@ const Form2 = () => {
               as="select"
               id="country"
               name="country"
-              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isContryOpen ? 'open' : ''}`}
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${
+                isContryOpen ? "open" : ""
+              }`}
               onClick={() => setIsContryOpen(!isContryOpen)}
               onBlur={() => setIsContryOpen(false)}
             >
@@ -155,14 +182,19 @@ const Form2 = () => {
               <option value="Punjab" label="Punjab" />
               <option value="Andhra Pradesh" label="Andhra Pradesh" />
             </Field>
-            <IoIosArrowDown className={`dropdown-arrow ${isContryOpen ? 'rotate' : ''}`} />
+            <IoIosArrowDown
+              className={`dropdown-arrow ${isContryOpen ? "rotate" : ""}`}
+            />
           </div>
-          <span className="text-danger fs-small">
+          <div className="text-danger fs-small">
             <ErrorMessage name="country" />
-          </span>
+          </div>
         </div>
-        <div className='col-12 col-lg-6 ps-2'>
-          <label className="text-primary font-weight-semibold" htmlFor="pincode">
+        <div className="col-12 col-lg-6 ps-2">
+          <label
+            className="text-primary font-weight-semibold"
+            htmlFor="pincode"
+          >
             Pincode
           </label>
           <Field
@@ -172,15 +204,13 @@ const Form2 = () => {
             name="pincode"
             className="form-control border border-secondary rounded-3 p-3 w-100"
           />
-          <span className="text-danger fs-small">
+          <div className="text-danger fs-small">
             <ErrorMessage name="pincode" />
-          </span>
+          </div>
         </div>
       </div>
     </div>
-
   );
 };
 
 export default Form2;
-
