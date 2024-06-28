@@ -1,11 +1,13 @@
+import { FaCheck } from "react-icons/fa";
 import DesktopImage from "../../../Assets/bg-sidebar-desktop.svg";
 import MobileImage from "../../../Assets/bg-sidebar-mobile.svg";
 
 type dataType = {
   currentIndex: number;
+  completedSteps: boolean[];
 };
 
-const StepNav = ({ currentIndex }: dataType) => {
+const StepNav = ({ currentIndex, completedSteps }: dataType) => {
   const steps: string[] = [
     "Your Info",
     "Company Info",
@@ -18,30 +20,29 @@ const StepNav = ({ currentIndex }: dataType) => {
       <img
         src={DesktopImage}
         alt="Background Desktop"
-        className="position-absolute w-100 rounded-lg object-cover d-none d-lg-block"
+        className="position-absolute w-100 rounded-lg object-cover d-none d-lg-block top-0 h-100"
       />
       <img
         src={MobileImage}
         alt="Background Mobile"
         className="d-block d-lg-none w-100 object-cover h-25 position-absolute"
       />
-      <div className="z-index-50 position-relative p-4  d-flex flex-lg-column gap-4 justify-content-center flex-row">
+      <div className="z-index-50 position-relative p-4 d-flex flex-lg-column gap-5 justify-content-center flex-row">
         {steps.map((item, index) => (
           <div key={item} className="d-flex align-items-center gap-3">
             <div
-              className={`d-flex justify-content-center align-items-center border border-light ${
-                currentIndex === index ? "bg-light text-dark" : "text-secondary"
-              } rounded-circle font-weight-bold text-light`}
+              className={`d-flex justify-content-center align-items-center border border-light ${currentIndex === index ? "bg-light text-dark" : "text-secondary"
+                } rounded-circle font-weight-bold text-light`}
               style={{ width: "2.75rem", height: "2.75rem" }}
             >
-              {index + 1}
+              {completedSteps[index] ? <FaCheck /> : index + 1}
             </div>
             <div className="d-none d-lg-block">
-              <h5 className="text-light font-weight-medium text-small">
+              {/* <h5 className="text-light font-weight-medium text-small">
                 STEP {index + 1}
-              </h5>
-              <h6 className="text-base font-weight-bold text-white">
-                {item.toUpperCase()}
+              </h5> */}
+              <h6 className="text-base font-weight-bold text-white m-0">
+                {item}
               </h6>
             </div>
           </div>

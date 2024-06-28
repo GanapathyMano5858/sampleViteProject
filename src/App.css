@@ -9,7 +9,6 @@
   box-sizing: border-box;
 }
 
-
 a {
   text-decoration: none !important;
 }
@@ -40,6 +39,17 @@ a {
 }
 .primaryBtn:hover {
   background-color: var(--PrimaryColor);
+}
+
+.backBtn {
+  border: 1px solid var(--PrimaryColor);
+  background-color: transparent;
+  padding: 7px 20px;
+}
+.backBtn:hover {
+  background-color: var(--PrimaryColor);
+  color: var(--whiteColor);
+  transition: all 0.2s linear;
 }
 
 /* Default styles  */

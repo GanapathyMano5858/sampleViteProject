@@ -3,14 +3,14 @@ import { ErrorMessage, Field } from "formik";
 const Form1 = () => {
   return (
     <div className="d-flex flex-column gap-2 w-100 align-items-start font-mono text-left">
-      <h2 className="text-primary font-weight-bold fs-3 mb-0">Personal Info</h2>
+      <h2 className="text-success font-weight-bold fs-3 mb-0">Personal Info</h2>
       <p className="text-secondary mb-2 fs-small">
         Please provide your name, address, and phone
       </p>
       <div className="d-flex w-100 justify-content-between">
         <div className="col-12 col-lg-6 pe-lg-2 d-flex flex-column">
           <label
-            className="text-primary font-weight-semibold pb-2"
+            className="text-success font-weight-semibold pb-2"
             htmlFor="firstname"
           >
             First Name
@@ -28,7 +28,7 @@ const Form1 = () => {
         </div>
         <div className="col-12 col-lg-6 ps-lg-2 d-flex flex-column">
           <label
-            className="text-primary font-weight-semibold pb-2"
+            className="text-success font-weight-semibold pb-2"
             htmlFor="lastname"
           >
             Last Name
@@ -48,7 +48,7 @@ const Form1 = () => {
 
       <div className="col-12 ">
         <label
-          className="text-primary font-weight-semibold pb-2"
+          className="text-success font-weight-semibold pb-2"
           htmlFor="emailid"
         >
           Email ID
@@ -69,7 +69,7 @@ const Form1 = () => {
       <div className="d-flex w-100 justify-content-between">
         <div className="col-12 col-lg-6 pe-lg-2 d-flex flex-column">
           <label
-            className="text-primary font-weight-semibold pb-2"
+            className="text-success font-weight-semibold pb-2"
             htmlFor="mobilenumber"
           >
             Mobile Number
@@ -87,7 +87,7 @@ const Form1 = () => {
         </div>
         <div className="col-12 col-lg-6 ps-lg-2 d-flex flex-column">
           <label
-            className="text-primary font-weight-semibold pb-2"
+            className="text-success font-weight-semibold pb-2"
             htmlFor="alternatemobilenumber"
           >
             Alternate Mobile Number

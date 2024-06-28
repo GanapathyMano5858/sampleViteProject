@@ -23,10 +23,6 @@ const form1Schema = z.object({
     .string()
     .min(3, "Minimum 3 characters")
     .max(20, "Maximum 20 characters"),
-  // address: z
-  //   .string()
-  //   .min(10, "Minimum 10 characters")
-  //   .max(100, "Maximum 100 characters"),
   mobilenumber: z
     .string()
     .min(10, "Should contain minimum 10 digits")
@@ -48,24 +44,24 @@ const form1Schema = z.object({
 const form2Schema = z.object({
   companyname: z
     .string()
-    .min(2, "Minimun 2 characters")
-    .max(14, "Maximum 100 characters"),
+    .min(2, "Minimum 2 characters")
+    .max(100, "Maximum 100 characters"),
   companytype: z
     .string()
     .nonempty("Please select a company type"),
   address: z
     .string()
-    .min(10, 'Minimun 10 characters')
+    .min(10, 'Minimum 10 characters')
     .max(100, 'Maximum 100 characters'),
-    city: z
+  city: z
     .string()
-    .nonempty("Please select a company type"),
-    state: z
+    .nonempty("Please select a city"),
+  state: z
     .string()
-    .nonempty("Please select a company type"),
-    country: z
+    .nonempty("Please select a state"),
+  country: z
     .string()
-    .nonempty("Please select a company type"),
+    .nonempty("Please select a country"),
   pincode: z
     .string()
     .min(6, "Pincode must be exactly 6 digits")
@@ -74,11 +70,36 @@ const form2Schema = z.object({
 });
 
 const form3Schema = z.object({
-
+  accountno: z
+    .string()
+    .regex(/^\d+$/, "Account number must contain only digits")
+    .min(10, "Should contain minimum 10 digits")
+    .max(18, "Should not exceed 18 digits"),
+  beneficiaryname: z
+    .string()
+    .min(1, "Beneficiary name is required")
+    .regex(/^[a-zA-Z\s]+$/, "Beneficiary name must contain only alphabetic characters and spaces")
+    .max(100, "Beneficiary name should not exceed 100 characters"),
+  ifsccode: z
+    .string()
+    .regex(/^[A-Z]{4}0[A-Z0-9]{6}$/, "Invalid IFSC code format")
+    .min(11, "IFSC code must be 11 characters long")
+    .max(11, "IFSC code must be 11 characters long"),
+  filelist: z.array(z.instanceof(File)).min(1, 'Please upload your check').default([]),
 });
 
 const form4Schema = z.object({
-  addOn: z.string().array().optional(),
+  panno: z
+    .string()
+    .regex(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/, "Invalid PAN format")
+    .length(10, "PAN number must be 10 characters long"),
+  pannoImage: z.any(),
+  gstno: z
+    .string()
+    .regex(/^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}[Z]{1}[0-9A-Z]{1}$/, "Invalid GST Number format")
+    .length(15, "GST Number must be 15 characters long"),
+  gstimage: z.any(),
+  rcimage: z.any()
 });
 
 export const formValidationSchema = z.object({

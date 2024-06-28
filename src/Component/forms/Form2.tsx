@@ -10,7 +10,7 @@ const Form2 = () => {
   const [isContryOpen, setIsContryOpen] = useState(false);
 
   return (
-    <div className="d-flex flex-column gap-2 h-100 w-100 align-items-start font-mono text-left">
+    <div className="d-flex flex-column gap-2 h-100 w-100 align-items-start font-mono text-left overflow-y-scroll">
       <h2 className="text-primary font-weight-bold fs-3 mb-0">Company Info</h2>
       <p className="text-secondary mb-2 fs-small">
         Please provide your Company Name, Company Type, and Address
@@ -18,7 +18,7 @@ const Form2 = () => {
       <div className="d-flex w-100 justify-content-between">
         <div className="col-12 col-lg-6 pe-2">
           <label
-            className="text-primary font-weight-semibold"
+            className="text-primary font-weight-semibold pb-2"
             htmlFor="companyname"
           >
             Company Name
@@ -36,7 +36,7 @@ const Form2 = () => {
         </div>
         <div className="col-12 col-lg-6 ps-2">
           <label
-            className="text-primary font-weight-semibold"
+            className="text-primary font-weight-semibold pb-2"
             htmlFor="companytype"
           >
             Company Type
@@ -46,9 +46,8 @@ const Form2 = () => {
               as="select"
               id="companytype"
               name="companytype"
-              className={`form-control border border-secondary rounded-3 p-3 w-100 ${
-                isCompanyTypeOpen ? "open" : ""
-              }`}
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isCompanyTypeOpen ? "open" : ""
+                }`}
               onClick={() => setIsCompanyTypeOpen(!isCompanyTypeOpen)}
               onBlur={() => setIsCompanyTypeOpen(false)}
             >
@@ -70,17 +69,17 @@ const Form2 = () => {
               className={`dropdown-arrow ${isCompanyTypeOpen ? "rotate" : ""}`}
             />
           </div>
-          <div className="text-danger fs-small">
+          <div className="text-danger fs-small pt-2">
             <ErrorMessage name="companytype" />
           </div>
         </div>
       </div>
 
-      <label className="text-Marine_blue font-semibold" htmlFor="address">
+      <label className="text-Marine_blue font-semibold pb-2" htmlFor="address">
         Address
       </label>
       <Field
-        as="textarea"
+        // as="textarea"
         type="text"
         placeholder=" e.g. XYZ Street, Avenue Center"
         id="address"
@@ -88,12 +87,12 @@ const Form2 = () => {
         // row="3"
         className="formControlTextArea form-control border border-secondary rounded-3 p-3 w-100"
       />
-      <div className="text-danger fs-small">
+      <div className="text-danger fs-small pt-2">
         <ErrorMessage name="address" />
       </div>
       <div className="d-flex w-100 justify-content-between">
         <div className="col-12 col-lg-6 pe-2">
-          <label className="text-primary font-weight-semibold" htmlFor="city">
+          <label className="text-primary font-weight-semibold pb-2" htmlFor="city">
             City
           </label>
           <div className="select-wrapper">
@@ -101,9 +100,8 @@ const Form2 = () => {
               as="select"
               id="city"
               name="city"
-              className={`form-control border border-secondary rounded-3 p-3 w-100 ${
-                isCityOpen ? "open" : ""
-              }`}
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isCityOpen ? "open" : ""
+                }`}
               onClick={() => setIsCityOpen(!isCityOpen)}
               onBlur={() => setIsCityOpen(false)}
             >
@@ -119,12 +117,12 @@ const Form2 = () => {
               className={`dropdown-arrow ${isCityOpen ? "rotate" : ""}`}
             />
           </div>
-          <div className="text-danger fs-small">
+          <div className="text-danger fs-small pt-2">
             <ErrorMessage name="state" />
           </div>
         </div>
         <div className="col-12 col-lg-6 ps-2">
-          <label className="text-primary font-weight-semibold" htmlFor="state">
+          <label className="text-primary font-weight-semibold pb-2" htmlFor="state">
             State
           </label>
           <div className="select-wrapper">
@@ -132,9 +130,8 @@ const Form2 = () => {
               as="select"
               id="state"
               name="state"
-              className={`form-control border border-secondary rounded-3 p-3 w-100 ${
-                isStateOpen ? "open" : ""
-              }`}
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isStateOpen ? "open" : ""
+                }`}
               onClick={() => setIsStateOpen(!isStateOpen)}
               onBlur={() => setIsStateOpen(false)}
             >
@@ -150,7 +147,7 @@ const Form2 = () => {
               className={`dropdown-arrow ${isStateOpen ? "rotate" : ""}`}
             />
           </div>
-          <div className="text-danger fs-small">
+          <div className="text-danger fs-small pt-2">
             <ErrorMessage name="state" />
           </div>
         </div>
@@ -158,7 +155,7 @@ const Form2 = () => {
       <div className="d-flex w-100 justify-content-between">
         <div className="col-12 col-lg-6 pe-2">
           <label
-            className="text-primary font-weight-semibold"
+            className="text-primary font-weight-semibold pb-2"
             htmlFor="country"
           >
             Country
@@ -168,9 +165,8 @@ const Form2 = () => {
               as="select"
               id="country"
               name="country"
-              className={`form-control border border-secondary rounded-3 p-3 w-100 ${
-                isContryOpen ? "open" : ""
-              }`}
+              className={`form-control border border-secondary rounded-3 p-3 w-100 ${isContryOpen ? "open" : ""
+                }`}
               onClick={() => setIsContryOpen(!isContryOpen)}
               onBlur={() => setIsContryOpen(false)}
             >
@@ -186,13 +182,13 @@ const Form2 = () => {
               className={`dropdown-arrow ${isContryOpen ? "rotate" : ""}`}
             />
           </div>
-          <div className="text-danger fs-small">
+          <div className="text-danger fs-small pt-2">
             <ErrorMessage name="country" />
           </div>
         </div>
         <div className="col-12 col-lg-6 ps-2">
           <label
-            className="text-primary font-weight-semibold"
+            className="text-primary font-weight-semibold pb-2"
             htmlFor="pincode"
           >
             Pincode
@@ -204,7 +200,7 @@ const Form2 = () => {
             name="pincode"
             className="form-control border border-secondary rounded-3 p-3 w-100"
           />
-          <div className="text-danger fs-small">
+          <div className="text-danger fs-small pt-2">
             <ErrorMessage name="pincode" />
           </div>
         </div>

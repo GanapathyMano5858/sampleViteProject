@@ -6,7 +6,7 @@ const NextButton = ({ index }: dataType) => {
   return (
     <button
       type="submit"
-      className={`btn btn-primary rounded ${index === 3 ? 'btn-success' : ''}`}>
+      className={`primaryBtn ${index === 3 ? 'btn-success' : ''}`}>
       {index === 3 ? 'Submit' : 'Next Step'}
     </button>
   );
